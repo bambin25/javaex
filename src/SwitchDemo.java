@@ -3,6 +3,7 @@ public class SwitchDemo {
     whoIsIt("호랑이");
     whoIsIt("참새");
     whoIsIt("참새");
+    whoIsIt("곰팡이");
 
   } // end of method
 
