@@ -27,8 +27,11 @@ public class ArrayListDemo3 {
 
     System.out.println("scores = " + scores);
 
-    for (int i = 0; i < scores.size(); i++) {
-      total += scores.get(i);
+//    for (int i = 0; i < scores.size(); i++) {
+//      total += scores.get(i);
+//    }
+    for (Integer i : scores) {
+      total += i;
     }
 
     float avg = total / (float)scores.size();
