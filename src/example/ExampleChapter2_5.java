@@ -1,3 +1,5 @@
+package example;
+
 public class ExampleChapter2_5 {
   public static void main(String[] args) {
     byte byteValue=10;

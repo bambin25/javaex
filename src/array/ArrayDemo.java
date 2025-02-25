@@ -1,3 +1,5 @@
+package array;
+
 public class ArrayDemo {
   public static void main(String[] args) {
     // 5 과목의 점수를 저장하고 총점과 평균을 구하려고 한다.
