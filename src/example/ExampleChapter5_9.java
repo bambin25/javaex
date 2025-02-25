@@ -39,7 +39,7 @@ public class ExampleChapter5_9 {
 
           System.out.println(Arrays.toString(scores));
       } else if (menuItem.equals("2")) {
-          scores = new int[numOfStudents]; // < 이거뭐지
+          scores = new int[numOfStudents]; // < 이게뭐지
           for (int i = 0; i < numOfStudents; i++) {
             System.out.printf("score[%d] : ", i);
             scores[i] = Integer.parseInt(in.nextLine());
