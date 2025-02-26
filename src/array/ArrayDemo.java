@@ -6,6 +6,7 @@ public class ArrayDemo {
     int score1 = 100, score2 = 90, score3 = 80, score4 = 90, score5 = 78;
     int total = score1 + score2 + score3 + score4 + score5;
     double avg = total / (double)5;
+
     System.out.println("total = " + total);
     System.out.println("avg = " + avg);
 
@@ -17,6 +18,10 @@ public class ArrayDemo {
     avg = total / (double)scores.length;
     System.out.println("total = " + total);
     System.out.println("avg = " + avg);
+
+    for (String arg : args) {
+      System.out.println("arg = " + arg);
+    }
 
   }
 }
