@@ -25,7 +25,7 @@ class Concrete extends Abstract {
 
   @Override
   void show() {
-    System.out.printf("부모의 필드 i = %d , Concrete 객체의 필드 i = %d",
+    System.out.printf("부모의 필드 i = %d , Concrete 객체의 필드 i = %d \n",
         super.i, this.i );
   }
 }

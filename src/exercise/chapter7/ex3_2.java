@@ -7,7 +7,7 @@ public class ex3_2 {
     int res = t1.compareTo(t2);
 
     // 결과가 넓이가 같다.
-    if (res == -888){
+    if (res == -888) {
       System.out.println("넓이를 비교할 수 없습니다.");
     } else {
       if (res > 0 ) {
