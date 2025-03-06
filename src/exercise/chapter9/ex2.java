@@ -16,9 +16,10 @@ public class ex2 {
 }
             // K N / A B / T T < t는 같은타입으로해야함
 class Person<A, B> {
+  // 필드
   A key;
   B value;
-
+  // 생성자
   public Person(A key, B value) {
     this.key = key;
     this.value = value;
