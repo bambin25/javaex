@@ -9,8 +9,12 @@ public class ex2 {
   public static void main(String[] args) {
     Set<Person> set = new HashSet<>();
 
-    set.add(new Person("김열공",20)); set.add(new Person("최고봉",56));
-    set.add(new Person("우등생",16)); set.add(new Person("나자바",35));
+    set.add(new Person("김열공",20));
+    set.add(new Person("최고봉",56));
+    set.add(new Person("우등생",16));
+    set.add(new Person("나자바",35));
+
+    set.add(new Person("나자바",11));
     
     // iterator 를 정리해서 활용해야함 아래의 for문은 iterator를 활용잘못하는거임
 //    Iterator iter = set.iterator();
@@ -36,13 +40,13 @@ public class ex2 {
 }
 
 class Person {
+  String name;
+  int age;
+
   Person(String name, int age){
     this.name = name;
     this.age = age;
   }
-
-  String name;
-  int age;
 
   @Override
   public String toString() {
@@ -60,6 +64,6 @@ class Person {
 
   @Override
   public int hashCode() {
-    return Objects.hashCode(name);
+    return Objects.hash(name, age);
   }
 }
