@@ -1,5 +1,7 @@
 package exercise.chapter7;
 
+import java.util.Arrays;
+
 public class ex3_4 {
   public static void main(String[] args) {
     Person p1 = new Person("박지성",175,40,68);
@@ -17,6 +19,23 @@ public class ex3_4 {
         System.out.println(p1.name + "과 " + p2.name + "은 나이가 같습니다.");
       }
     }
+    // 배열에 Person 클래스를 담고 정렬하기
+    Person[] persons = {
+        new Person("박지성", 40, 175, 68),
+        new Person("손흥민", 20, 180, 70),
+        new Person("홍길동", 32, 170, 75)
+    };
+    // 오름차순으로 정렬
+    Arrays.sort(persons);
+    System.out.println("오름차순으로 정렬한 결과");
+    for (Person person : persons) {
+      System.out.println(person);
+    }
+    System.out.println("내림차순으로 정렬한 결과");
+    // 내림차순으로 정렬하는 방법 - 함수형 인터페이스와 람다식을 활용하여 !!
+    Arrays.sort(persons, (pi, pj) -> pj.compareTo(pi));
+    System.out.println(Arrays.toString(persons));
+
   }
 }
 
@@ -42,5 +61,15 @@ class Person implements Comparable {
       else result = 0;
     }
     return result;
+  }
+
+  @Override
+  public String toString() {
+    return "Person[" +
+        "이름=\"" + name + '\"' +
+        ", 나이=" + age +
+        ", 키=" + height +
+        ", 몸무게=" + weight +
+        ']';
   }
 }
