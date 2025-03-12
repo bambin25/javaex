@@ -1,5 +1,7 @@
 package stream;
 
+import java.util.IntSummaryStatistics;
+import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -25,5 +27,22 @@ public class CollectDemo {
         .collect(Collectors.joining("-"));
     System.out.println("4개의 나라 : (-) " + names);
 
+    Stream<Nation> s4 = Nation.nations.stream();
+    String names2 = s4.limit(4) // // 4개의 나라, 이름만을 가지고 다른 stream 반환, '-'
+        .collect(Collectors.mapping(Nation::getName, Collectors.joining("-")));
+    System.out.println("4개의 나라 (map + collect 동시 적용) :  "+ names2);
+
+    Stream<Nation> s5 = Nation.nations.stream();
+    Optional<Double> max = s5.collect(Collectors.mapping(
+        Nation::getPopulation, Collectors.maxBy(Double::compare)
+    ));
+    System.out.println("최대 인구를 가진 나라의 인구수 : " + max.get());
+
+    Stream<Nation> s6 = Nation.nations.stream();
+    IntSummaryStatistics iss = s6.collect(Collectors.summarizingInt(nation -> nation.getGdpRank()));
+    System.out.println(iss);
+    // 실행결과 - IntSummaryStatistics{count=8, sum=227, min=1, average=28.375000, max=63}
+    //IntSummaryStatistics는 int 값에 대한 통계적 요약 정보를 제공하는 클래스
+    //합계 (sum), 최댓값 (max), 최솟값 (min), 평균 (average), 개수 (count): 값의 개수.
   }
 }
